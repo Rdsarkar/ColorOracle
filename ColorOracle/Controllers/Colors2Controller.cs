@@ -34,6 +34,8 @@ namespace ColorOracle
         {
             var color = await _context.Colors.FindAsync(id);
 
+            //validation
+
             if (color == null)
             {
                 return NotFound();
@@ -54,7 +56,7 @@ namespace ColorOracle
             }
 
             _context.Entry(color).State = EntityState.Modified;
-
+            
             try
             {
                 await _context.SaveChangesAsync();
@@ -89,6 +91,9 @@ namespace ColorOracle
             }
             catch (DbUpdateConcurrencyException) 
             {
+
+                //validation
+
                 if (ColorExists(color.ColorId))
                 {
                     return Conflict();
@@ -109,6 +114,9 @@ namespace ColorOracle
         public async Task<IActionResult> DeleteColor(decimal? id)
         {
             var color = await _context.Colors.FindAsync(id);
+
+            //validation
+
             if (color == null)
             {
                 return NotFound();
