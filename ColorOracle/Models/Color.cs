@@ -9,5 +9,7 @@ namespace ColorOracle.Models
     {
         public decimal? ColorId { get; set; }
         public string ColorName { get; set; }
+
+        public string REPESENTER { get; set; }
     }
 }

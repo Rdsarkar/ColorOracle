@@ -49,6 +49,11 @@ namespace ColorOracle.Models
                     .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("COLOR_NAME");
+
+                entity.Property(e => e.REPESENTER)
+                   .HasMaxLength(100)
+                   .IsUnicode(false)
+                   .HasColumnName("REPESENTER");
             });
 
             OnModelCreatingPartial(modelBuilder);
