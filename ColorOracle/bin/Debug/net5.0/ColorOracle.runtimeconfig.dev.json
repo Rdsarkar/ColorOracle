@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Satcom\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Satcom\\.nuget\\packages"
+      "C:\\Users\\rajde\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\rajde\\.nuget\\packages"
     ]
   }
 }

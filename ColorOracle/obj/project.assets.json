@@ -7625,19 +7625,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Satcom\\.nuget\\packages\\": {}
+    "C:\\Users\\rajde\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dotNet\\ColorOracle\\ColorOracle\\ColorOracle.csproj",
+      "projectUniqueName": "D:\\DotNet\\GitHub\\ColorOracle\\ColorOracle\\ColorOracle.csproj",
       "projectName": "ColorOracle",
-      "projectPath": "D:\\dotNet\\ColorOracle\\ColorOracle\\ColorOracle.csproj",
-      "packagesPath": "C:\\Users\\Satcom\\.nuget\\packages\\",
-      "outputPath": "D:\\dotNet\\ColorOracle\\ColorOracle\\obj\\",
+      "projectPath": "D:\\DotNet\\GitHub\\ColorOracle\\ColorOracle\\ColorOracle.csproj",
+      "packagesPath": "C:\\Users\\rajde\\.nuget\\packages\\",
+      "outputPath": "D:\\DotNet\\GitHub\\ColorOracle\\ColorOracle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Satcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rajde\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
