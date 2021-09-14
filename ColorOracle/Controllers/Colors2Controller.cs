@@ -21,7 +21,7 @@ namespace ColorOracle
         }
 
         // GET: api/Colors
-        [HttpGet]
+        [HttpGet("BeautifulColors")]
         public async Task<ActionResult<IEnumerable<Color>>> GetColors()
         {
             return await _context.Colors.ToListAsync();
@@ -29,18 +29,19 @@ namespace ColorOracle
 
         // GET: api/Colors/5
         [HttpGet("{id}")]
+        
         public async Task<ActionResult<Color>> GetColor(decimal? id)
         {
             var color = await _context.Colors.FindAsync(id);
 
-            if (color == null)
-            {
-                return NotFound();
-            }
-
+            
+                if (color == null)
+                {
+                    return NotFound();
+                };
+           
             return color;
         }
-
         // PUT: api/Colors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
