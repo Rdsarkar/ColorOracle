@@ -28,54 +28,24 @@ namespace ColorOracle
         }
         // GET: api/Colors/5
         [HttpGet("{id}")]
-
-
         public async Task<ActionResult<Color>> GetColor(decimal? id)
         {
-            var color = await _context.Colors.FindAsync(id);
-
-            //validation
-
-            if (color == null)
-            {
-                return NotFound();
-            }
-            return color;
-
+            return await _context.Colors.FindAsync();
         }
+
+
         // PUT: api/Colors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutColor(decimal? id, Color color)
+        public async Task<IActionResult> PutColor(Color color, decimal? id)
         {
-            //validation
-
-            if (id != color.ColorId)
+            if (id != color.ColorId) 
             {
                 return BadRequest();
             }
-
             _context.Entry(color).State = EntityState.Modified;
-            
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                //validation
-
-                if (!ColorExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            await _context.SaveChangesAsync();
+            return Ok();
         }
 
         // POST: api/Colors
@@ -83,27 +53,9 @@ namespace ColorOracle
         [HttpPost]
         public async Task<ActionResult<Color>> PostColor(Color color)
         {
-
             _context.Colors.Add(color);
-            try 
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException) 
-            {
-
-                //validation
-
-                if (ColorExists(color.ColorId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return CreatedAtAction("GetColor", new { id = color.ColorId }, color);
+            await _context.SaveChangesAsync();
+            return Ok();
         }
 
 
@@ -111,21 +63,16 @@ namespace ColorOracle
 
         // DELETE: api/Colors/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteColor(decimal? id)
+        public async Task<ActionResult<Color>> DeleteColor(decimal? id)
         {
             var color = await _context.Colors.FindAsync(id);
-
-            //validation
-
-            if (color == null)
+            if (color == null )
             {
-                return NotFound();
+                return BadRequest();
             }
-
             _context.Colors.Remove(color);
             await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok();
         }
 
         private bool ColorExists(decimal? id)
